@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serviços - METALTECH</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../index.css">
+    <style>
+        /* Estilos específicos para a página de serviços */
+        .header-servicos {
+            padding-top: 140px;
+            text-align: center;
+            padding-bottom: 60px;
+        }
+        
+        .header-servicos h1 {
+            font-size: 2.8rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+        
+        .header-servicos p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .servicos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .servico-card {
+            background-color: var(--white);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: var(--transition);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            border-bottom: 4px solid var(--primary);
+        }
+        
+        .servico-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .servico-imagem {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .servico-imagem img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .servico-card:hover .servico-imagem img {
+            transform: scale(1.05);
+        }
+        
+        .servico-conteudo {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .servico-conteudo h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .servico-conteudo h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+        
+        .servico-conteudo p {
+            color: var(--gray);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .servico-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+            margin-top: auto;
+        }
+        
+        .servico-features li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 8px;
+            color: var(--gray);
+        }
+        
+        .servico-features li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: var(--primary);
+        }
+        
+        .servico-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--primary);
+            color: var(--white);
+            border-radius: var(--radius);
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            text-align: center;
+            margin-top: auto;
+            letter-spacing: 1px;
+        }
+        
+        .servico-btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+        
+        .processo-section {
+            background-color: var(--light);
+            padding: 80px 0;
+        }
+        
+        .processo-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .processo-header h2 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+        
+        .processo-header p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .processo-timeline {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .processo-timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background-color: var(--primary);
+            border-radius: 4px;
+        }
+        
+        .processo-item {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 30px;
+            position: relative;
+            margin-bottom: 50px;
+            width: 50%;
+        }
+        
+        .processo-item:nth-child(even) {
+            justify-content: flex-start;
+            padding-right: 0;
+            padding-left: 30px;
+            margin-left: auto;
+        }
+        
+        .processo-item::before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            right: -13px;
+            width: 26px;
+            height: 26px;
+            background-color: var(--white);
+            border: 4px solid var(--primary);
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .processo-item:nth-child(even)::before {
+            right: auto;
+            left: -13px;
+        }
+        
+        .processo-conteudo {
+            background-color: var(--white);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 25px;
+            max-width: 450px;
+        }
+        
+        .processo-numero {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .processo-conteudo h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+        
+        .processo-conteudo p {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+        
+        /* Responsividade para a seção de processo */
+        @media screen and (max-width: 768px) {
+            .processo-timeline::before {
+                left: 30px;
+            }
+            
+            .processo-item,
+            .processo-item:nth-child(even) {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 0;
+                justify-content: flex-start;
+            }
+            
+            .processo-item::before,
+            .processo-item:nth-child(even)::before {
+                left: 17px;
+                right: auto;
+            }
+            
+            .servicos-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header-servicos {
+                padding-top: 120px;
+            }
+            
+            .header-servicos h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section com Barra de Navegação -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="../index.html">METALTECH</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Início</a></li>
+            <li><a href="servicos.html" class="active-link">Serviços</a></li>
+            <li><a href="../index.html#vantagens">Vantagens</a></li>
+            <li><a href="../index.html#segmentos">Segmentos</a></li>
+            <li><a href="../index.html#faq">FAQ</a></li>
+            <li><a href="../index.html#contato" class="nav-btn-orcamento">Orçamento</a></li>
+        </ul>
+        <div class="menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Cabeçalho da Página de Serviços -->
+    <header class="header-servicos">
+        <div class="container">
+            <h1>Nossos Serviços</h1>
+            <p>Oferecemos soluções completas em estruturas metálicas e galpões lonados para atender às necessidades do seu negócio, desde o projeto até a manutenção.</p>
+        </div>
+    </header>
+
+    <!-- Seção de Serviços -->
+    <section class="servicos-section">
+        <div class="container">
+            <div class="servicos-grid">
+                <!-- Serviço 1 -->
+                <div class="servico-card">
+                    <div class="servico-imagem">
+                        <img src="https://images.unsplash.com/photo-1513467535987-fd81bc7d62f8?q=80&w=1920&auto=format&fit=crop" alt="Projetos Personalizados">
+                    </div>
+                    <div class="servico-conteudo">
+                        <h3>Projetos Personalizados</h3>
+                        <p>Desenvolvemos projetos de galpões lonados e estruturas metálicas totalmente personalizados de acordo com as necessidades específicas do seu negócio.</p>
+                        <ul class="servico-features">
+                            <li>Análise das necessidades</li>
+                            <li>Projeto arquitetônico e estrutural</li>
+                            <li>Compatibilidade com normas técnicas</li>
+                            <li>Planejamento de implantação</li>
+                        </ul>
+                        <a href="../index.html#contato" class="servico-btn">Solicitar Orçamento</a>
+                    </div>
+                </div>
+
+                <!-- Serviço 2 -->
+                <div class="servico-card">
+                    <div class="servico-imagem">
+                        <img src="https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?q=80&w=1920&auto=format&fit=crop" alt="Fabricação de Estruturas">
+                    </div>
+                    <div class="servico-conteudo">
+                        <h3>Fabricação de Estruturas</h3>
+                        <p>Fabricamos estruturas metálicas de alta qualidade utilizando materiais certificados e processos que garantem durabilidade e segurança.</p>
+                        <ul class="servico-features">
+                            <li>Aço galvanizado de alta resistência</li>
+                            <li>Tratamento anticorrosivo</li>
+                            <li>Controle de qualidade rigoroso</li>
+                            <li>Sistemas modulares flexíveis</li>
+                        </ul>
+                        <a href="../index.html#contato" class="servico-btn">Solicitar Orçamento</a>
+                    </div>
+                </div>
+
+                <!-- Serviço 3 -->
+                <div class="servico-card">
+                    <div class="servico-imagem">
+                        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=1920&auto=format&fit=crop" alt="Montagem e Instalação">
+                    </div>
+                    <div class="servico-conteudo">
+                        <h3>Montagem e Instalação</h3>
+                        <p>Realizamos a montagem e instalação completa dos galpões lonados com equipe especializada, garantindo segurança e rapidez no processo.</p>
+                        <ul class="servico-features">
+                            <li>Equipe técnica especializada</li>
+                            <li>Montagem até 5x mais rápida</li>
+                            <li>Baixo impacto ambiental</li>
+                            <li>Mínima interrupção das atividades</li>
+                        </ul>
+                        <a href="../index.html#contato" class="servico-btn">Solicitar Orçamento</a>
+                    </div>
+                </div>
+
+                <!-- Serviço 4 -->
+                <div class="servico-card">
+                    <div class="servico-imagem">
+                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1920&auto=format&fit=crop" alt="Lonas e Coberturas">
+                    </div>
+                    <div class="servico-conteudo">
+                        <h3>Lonas e Coberturas</h3>
+                        <p>Fornecemos lonas de alta qualidade, resistentes às intempéries e com tratamento anti-UV, ideais para coberturas de galpões e estruturas diversas.</p>
+                        <ul class="servico-features">
+                            <li>Lonas de PVC de alta resistência</li>
+                            <li>Tratamento anti-UV e antichamas</li>
+                            <li>Diversas cores disponíveis</li>
+                            <li>Durabilidade de até 10 anos</li>
+                        </ul>
+                        <a href="../index.html#contato" class="servico-btn">Solicitar Orçamento</a>
+                    </div>
+                </div>
+
+                <!-- Serviço 5 -->
+                <div class="servico-card">
+                    <div class="servico-imagem">
+                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=1920&auto=format&fit=crop" alt="Reformas e Ampliações">
+                    </div>
+                    <div class="servico-conteudo">
+                        <h3>Reformas e Ampliações</h3>
+                        <p>Realizamos reformas e ampliações em estruturas existentes, adaptando-as às novas necessidades do seu negócio com mínima interrupção das atividades.</p>
+                        <ul class="servico-features">
+                            <li>Avaliação técnica da estrutura atual</li>
+                            <li>Projeto de ampliação modular</li>
+                            <li>Reforço estrutural quando necessário</li>
+                            <li>Integração com construções existentes</li>
+                        </ul>
+                        <a href="../index.html#contato" class="servico-btn">Solicitar Orçamento</a>
+                    </div>
+                </div>
+
+                <!-- Serviço 6 -->
+                <div class="servico-card">
+                    <div class="servico-imagem">
+                        <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=1920&auto=format&fit=crop" alt="Manutenção Preventiva">
+                    </div>
+                    <div class="servico-conteudo">
+                        <h3>Manutenção Preventiva</h3>
+                        <p>Oferecemos serviços de manutenção preventiva e corretiva para garantir a durabilidade e segurança das estruturas e coberturas instaladas.</p>
+                        <ul class="servico-features">
+                            <li>Inspeções periódicas programadas</li>
+                            <li>Substituição de componentes desgastados</li>
+                            <li>Reforço estrutural quando necessário</li>
+                            <li>Contratos de manutenção personalizados</li>
+                        </ul>
+                        <a href="../index.html#contato" class="servico-btn">Solicitar Orçamento</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Processo de Trabalho 
+    <section class="processo-section">
+        <div class="container">
+            <div class="processo-header">
+                <h2>Nosso Processo de Trabalho</h2>
+                <p>Conheça as etapas do nosso processo de trabalho, desde o primeiro contato até a entrega final da sua estrutura.</p>
+            </div>
+            
+            <div class="processo-timeline">
+                
+                <div class="processo-item">
+                    <div class="processo-conteudo">
+                        <span class="processo-numero">1</span>
+                        <h3>Análise de Necessidades</h3>
+                        <p>Realizamos uma análise detalhada das suas necessidades, visitando o local da instalação e compreendendo os requisitos específicos do seu projeto.</p>
+                    </div>
+                </div>
+                
+                
+                <div class="processo-item">
+                    <div class="processo-conteudo">
+                        <span class="processo-numero">2</span>
+                        <h3>Projeto e Orçamento</h3>
+                        <p>Desenvolvemos o projeto técnico e apresentamos um orçamento detalhado, considerando todas as especificações e requisitos levantados na etapa anterior.</p>
+                    </div>
+                </div>
+                
+               
+                <div class="processo-item">
+                    <div class="processo-conteudo">
+                        <span class="processo-numero">3</span>
+                        <h3>Fabricação</h3>
+                        <p>Após a aprovação do projeto, iniciamos a fabricação das estruturas metálicas e preparação das lonas, seguindo rigorosos padrões de qualidade.</p>
+                    </div>
+                </div>
+                
+                
+                <div class="processo-item">
+                    <div class="processo-conteudo">
+                        <span class="processo-numero">4</span>
+                        <h3>Montagem e Instalação</h3>
+                        <p>Nossa equipe especializada realiza a montagem e instalação completa da estrutura no local, garantindo agilidade e mínima interferência nas suas operações.</p>
+                    </div>
+                </div>
+                
+                
+                <div class="processo-item">
+                    <div class="processo-conteudo">
+                        <span class="processo-numero">5</span>
+                        <h3>Entrega e Documentação</h3>
+                        <p>Realizamos a entrega técnica da estrutura, fornecendo toda a documentação necessária, incluindo ART e orientações para manutenção e conservação.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>-->
+
+    <!-- Seção CTA - Orçamento -->
+    <section class="cta-section">
+        <div class="cta-overlay"></div>
+        <div class="cta-container">
+            <div class="cta-content">
+                <h2>Precisa de uma solução personalizada?</h2>
+                <h3>Entre em contato conosco hoje mesmo</h3>
+                <p>Nossa equipe está pronta para desenvolver o projeto ideal para o seu negócio, com qualidade, eficiência e o melhor custo-benefício do mercado.</p>
+                <div class="cta-buttons">
+                    <a href="../index.html#contato" class="cta-btn-primary">Solicitar Orçamento Agora</a>
+                    <a href="tel:+5500000000000" class="cta-btn-secondary">Falar com Especialista</a>
+                </div>
+                <p class="cta-garantia">Resposta em até 24 horas! Atendemos em todo o Brasil.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Botão de WhatsApp flutuante -->
+    <a href="https://wa.me/5500000000000" class="whatsapp-float" target="_blank">
+        <i class="whatsapp-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="100%" height="100%" fill="currentColor">
+                <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+            </svg>
+        </i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <!-- Coluna 1: Logo e descrição -->
+                    <div class="footer-column">
+                        <div class="footer-logo">
+                            <a href="../index.html">METALTECH</a>
+                        </div>
+                        <p>Soluções em estruturas metálicas e galpões lonados com qualidade e eficiência para atender às necessidades do seu negócio.</p>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon" aria-label="Facebook">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" width="16" height="16" fill="currentColor">
+                                    <path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-icon" aria-label="Instagram">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="16" height="16" fill="currentColor">
+                                    <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-icon" aria-label="LinkedIn">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="16" height="16" fill="currentColor">
+                                    <path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-icon" aria-label="YouTube">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="16" height="16" fill="currentColor">
+                                    <path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Coluna 2: Links rápidos -->
+                    <div class="footer-column">
+                        <h4>Links Rápidos</h4>
+                        <ul class="footer-links">
+                            <li><a href="../index.html">Início</a></li>
+                            <li><a href="../index.html#vantagens">Vantagens</a></li>
+                            <li><a href="servicos.html">Serviços</a></li>
+                            <li><a href="../index.html#segmentos">Segmentos</a></li>
+                            <li><a href="../index.html#faq">Dúvidas Frequentes</a></li>
+                            <li><a href="../index.html#contato">Orçamento</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Coluna 3: Contato -->
+                    <div class="footer-column">
+                        <h4>Contato</h4>
+                        <ul class="contact-info">
+                            <li>
+                                <span class="contact-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" width="16" height="16" fill="currentColor">
+                                        <path d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"/>
+                                    </svg>
+                                </span>
+                                <p>Rua Exemplo, 123<br>São Paulo - SP, 01234-567</p>
+                            </li>
+                            <li>
+                                <span class="contact-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="16" height="16" fill="currentColor">
+                                        <path d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"/>
+                                    </svg>
+                                </span>
+                                <p><a href="tel:+5500000000000">(00) 0000-0000</a></p>
+                            </li>
+                            <li>
+                                <span class="contact-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="16" height="16" fill="currentColor">
+                                        <path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"/>
+                                    </svg>
+                                </span>
+                                <p><a href="mailto:contato@metaltech.com.br">contato@metaltech.com.br</a></p>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Coluna 4: Horário de Funcionamento -->
+                    <div class="footer-column">
+                        <h4>Horário de Atendimento</h4>
+                        <ul class="business-hours">
+                            <li><span>Segunda - Sexta:</span> 8h às 18h</li>
+                            <li><span>Sábado:</span> 8h às 12h</li>
+                            <li><span>Domingo:</span> Fechado</li>
+                        </ul>
+                        <a href="../index.html#contato" class="footer-cta">Solicitar Orçamento</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer Bottom com direitos autorais -->
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 METALTECH. Todos os direitos reservados.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Política de Privacidade</a>
+                    <a href="#">Termos de Uso</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Importando o JavaScript -->
+    <script src="../index.js"></script>
+</body>
+</html>
