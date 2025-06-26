@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Serviços - METALTECH</title>
+    <title>Serviços - OPEN</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -30,23 +30,277 @@
             line-height: 1.6;
         }
         
-        .servicos-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 60px;
+        .servicos-section {
+            padding: 80px 0;
         }
         
-        .servico-card {
-            background-color: var(--white);
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow);
+        .servico-item {
+            margin-bottom: 80px;
+            padding-bottom: 80px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .servico-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .servico-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 60px;
+            align-items: start;
+        }
+        
+        .servico-imagem {
+            width: 100%;
+            height: 300px;
             overflow: hidden;
-            transition: var(--transition);
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .servico-imagem img {
+            width: 100%;
             height: 100%;
+            object-fit: cover;
+        }
+        
+        .servico-info h3 {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .servico-info p {
+            color: var(--gray);
+            line-height: 1.6;
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+        
+        .servico-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 30px;
+        }
+        
+        .servico-features li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 12px;
+            color: var(--gray);
+            line-height: 1.5;
+        }
+        
+        .servico-features li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            background-color: var(--primary);
+            border-radius: 50%;
+        }
+        
+        .servico-btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .servico-btn:hover {
+            background-color: #e55a2b;
+            transform: translateY(-2px);
+        }
+        
+        .servico-destaque {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+            margin-bottom: 25px;
+        }
+        
+        .servico-destaque strong {
+            color: var(--primary);
+        }
+        
+        .servico-opcoes {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 25px 0;
+        }
+        
+        .opcao-item h4 {
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .opcao-item p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+        
+        .opcionais-lista {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+        
+        .opcionais-lista li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0;
+        }
+        
+        .opcionais-lista li::before {
+            display: none;
+        }
+        
+        .opcionais-lista span {
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        /* Estilos para seções de usos */
+        .usos-section {
+            margin: 30px 0;
+            padding: 25px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border-radius: 10px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .usos-section h4 {
+            color: var(--primary);
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .usos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .uso-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .uso-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+        }
+
+        .uso-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .uso-item span:last-child {
+            font-size: 0.95rem;
+            color: #333;
+            line-height: 1.3;
+        }
+
+        /* Estilos para imagens duplas */
+        .servico-imagens-duplas {
             display: flex;
             flex-direction: column;
-            border-bottom: 4px solid var(--primary);
+            gap: 20px;
+        }
+
+        .servico-imagens-duplas .servico-imagem {
+            position: relative;
+            height: 140px;
+        }
+
+        .imagem-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            padding: 15px 20px 10px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-align: center;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .servico-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .servico-imagem {
+                height: 250px;
+            }
+            
+            .servico-info h3 {
+                font-size: 1.6rem;
+            }
+            
+            .servico-opcoes {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .opcionais-lista {
+                grid-template-columns: 1fr;
+            }
+            
+            .usos-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            
+            .usos-section {
+                margin: 20px 0;
+                padding: 20px;
+            }
+            
+            .usos-section h4 {
+                font-size: 1.1rem;
+                margin-bottom: 15px;
+            }
+
+            .servico-imagens-duplas .servico-imagem {
+                height: 120px;
+            }
+
+            .imagem-label {
+                font-size: 0.9rem;
+                padding: 12px 15px 8px;
+            }
         }
         
         .servico-card:hover {
@@ -291,7 +545,7 @@
     <!-- Hero Section com Barra de Navegação -->
     <nav class="navbar">
         <div class="logo">
-            <a href="../index.html">METALTECH</a>
+            <a href="../index.html"><img src="../assets/Open.png" alt="OPEN" /></a>
         </div>
         <ul class="nav-links">
             <li><a href="../index.html">Início</a></li>
@@ -312,117 +566,181 @@
     <header class="header-servicos">
         <div class="container">
             <h1>Nossos Serviços</h1>
-            <p>Oferecemos soluções completas em estruturas metálicas e galpões lonados para atender às necessidades do seu negócio, desde o projeto até a manutenção.</p>
+            <p>Oferecemos soluções para demandas de Geração de Energia, Galpões e Módulos Habitacionais nos mais diversos segmentos. Prestando serviços com os mais altos padrões de qualidade, desde a contratação até a desmobilização da operação.</p>
         </div>
     </header>
 
     <!-- Seção de Serviços -->
     <section class="servicos-section">
         <div class="container">
-            <div class="servicos-grid">
-                <!-- Serviço 1 -->
-                <div class="servico-card">
+            <!-- Serviço 1 - Geradores a Diesel -->
+            <div class="servico-item">
+                <div class="servico-content">
                     <div class="servico-imagem">
-                        <img src="https://images.unsplash.com/photo-1513467535987-fd81bc7d62f8?q=80&w=1920&auto=format&fit=crop" alt="Projetos Personalizados">
+                        <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=1920&auto=format&fit=crop" alt="Gerador a Diesel">
                     </div>
-                    <div class="servico-conteudo">
-                        <h3>Projetos Personalizados</h3>
-                        <p>Desenvolvemos projetos de galpões lonados e estruturas metálicas totalmente personalizados de acordo com as necessidades específicas do seu negócio.</p>
+                    <div class="servico-info">
+                        <h3>Locação e Venda de Geradores a Diesel</h3>
+                        <div class="servico-destaque">
+                            <p><strong>Representante autorizado MWM - vendas diretas da fábrica.</strong> Os Geradores a Diesel fabricados pela MWM são equipados com motores próprios.</p>
+                        </div>
                         <ul class="servico-features">
-                            <li>Análise das necessidades</li>
-                            <li>Projeto arquitetônico e estrutural</li>
-                            <li>Compatibilidade com normas técnicas</li>
-                            <li>Planejamento de implantação</li>
+                            <li>Equipamentos disponíveis nas versões ABERTA e CARENADA</li>
+                            <li>Sistemas de controle microprocessados de última geração</li>
+                            <li>Alternadores de alto rendimento e fácil manutenção</li>
+                            <li>Potência disponível nos regimes ESP, PRP e COP</li>
+                            <li>Excelente consumo de combustível</li>
+                            <li>Dimensões reduzidas para transporte e armazenamento</li>
+                            <li>Atendimento às normativas ambientais de segurança e sustentabilidade</li>
                         </ul>
                         <a href="../index.html#contato" class="servico-btn">Solicitar Orçamento</a>
                     </div>
                 </div>
+            </div>
 
-                <!-- Serviço 2 -->
-                <div class="servico-card">
+            <!-- Serviço 2 - Geradores a Gás -->
+            <div class="servico-item">
+                <div class="servico-content">
                     <div class="servico-imagem">
-                        <img src="https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?q=80&w=1920&auto=format&fit=crop" alt="Fabricação de Estruturas">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1920&auto=format&fit=crop" alt="Gerador a Gás">
                     </div>
-                    <div class="servico-conteudo">
-                        <h3>Fabricação de Estruturas</h3>
-                        <p>Fabricamos estruturas metálicas de alta qualidade utilizando materiais certificados e processos que garantem durabilidade e segurança.</p>
+                    <div class="servico-info">
+                        <h3>Locação e Venda de Geradores a Gás</h3>
+                        <p>Esses motores foram projetados exclusivamente para trabalho com gás e possuem a maior densidade de potência por cilindro do mercado, utilizando vários tipos de gases como combustível (gás natural e biogás).</p>
                         <ul class="servico-features">
-                            <li>Aço galvanizado de alta resistência</li>
-                            <li>Tratamento anticorrosivo</li>
-                            <li>Controle de qualidade rigoroso</li>
-                            <li>Sistemas modulares flexíveis</li>
+                            <li>Equipamentos disponíveis nas versões ABERTA e CARENADA</li>
+                            <li>Sistemas de controle e proteção do gás de última geração</li>
+                            <li>Menor tempo de reação à carga do mercado</li>
+                            <li>Potência disponível nos regimes ESP, PRP e COP</li>
+                            <li>Dimensões reduzidas para transporte e armazenamento</li>
+                            <li>Menor nível de emissões de poluentes, garantindo sustentabilidade ambiental</li>
+                            <li>Menor consumo de combustível</li>
                         </ul>
                         <a href="../index.html#contato" class="servico-btn">Solicitar Orçamento</a>
                     </div>
                 </div>
+            </div>
 
-                <!-- Serviço 3 -->
-                <div class="servico-card">
+            <!-- Serviço 3 - Galpões -->
+            <div class="servico-item">
+                <div class="servico-content">
                     <div class="servico-imagem">
-                        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=1920&auto=format&fit=crop" alt="Montagem e Instalação">
+                        <img src="https://images.unsplash.com/photo-1513467535987-fd81bc7d62f8?q=80&w=1920&auto=format&fit=crop" alt="Galpões">
                     </div>
-                    <div class="servico-conteudo">
-                        <h3>Montagem e Instalação</h3>
-                        <p>Realizamos a montagem e instalação completa dos galpões lonados com equipe especializada, garantindo segurança e rapidez no processo.</p>
+                    <div class="servico-info">
+                        <h3>Locação e Venda de Galpões</h3>
+                        <div class="servico-opcoes">
+                            <div class="opcao-item">
+                                <h4>VENDA</h4>
+                                <p>Fabricamos Galpões sob medida com estrutura em aço galvanizado a fogo, treliçado ou tubular, cobertura e fechamento em lona vinílica de alta tenacidade.</p>
+                            </div>
+                            <div class="opcao-item">
+                                <h4>LOCAÇÃO</h4>
+                                <p>Para Locação dispomos de galpões modulares com frente de 10m a 40m podendo se estender à necessidade dos clientes com os módulos de 5m.</p>
+                            </div>
+                        </div>
+                        <h4 style="color: #FF6B35; font-size: 1.1rem; margin-bottom: 15px;">OPCIONAIS NA LOCAÇÃO</h4>
+                        <ul class="opcionais-lista">
+                            <li><span>⚡</span> Energia elétrica (iluminação e tomada)</li>
+                            <li><span>❄️</span> Climatização</li>
+                            <li><span>🏢</span> Piso</li>
+                        </ul>
+                        <a href="../index.html#contato" class="servico-btn">Solicitar Orçamento</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Serviço 4 - Módulos Habitacionais e Containers -->
+            <div class="servico-item">
+                <div class="servico-content">
+                    <div class="servico-imagens-duplas">
+                        <div class="servico-imagem">
+                            <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1920&auto=format&fit=crop" alt="Módulos Habitacionais">
+                            <div class="imagem-label">Módulos Habitacionais</div>
+                        </div>
+                        <div class="servico-imagem">
+                            <img src="https://images.unsplash.com/photo-1566228015668-4c45dbc4e2f5?q=80&w=1920&auto=format&fit=crop" alt="Containers">
+                            <div class="imagem-label">Containers</div>
+                        </div>
+                    </div>
+                    <div class="servico-info">
+                        <h3>Locação e Venda de Módulos Habitacionais e Containers</h3>
+                        <p>O baixo impacto ambiental, a facilidade de mobilidade e o custo mais acessível quando comparado à construções de alvenaria fazem do container uma opção versátil e moderna.</p>
+                        
+                        <!-- Módulos Habitacionais -->
+                        <div class="usos-section">
+                            <h4>Módulos Habitacionais são comumente utilizados:</h4>
+                            <div class="usos-grid">
+                                <div class="uso-item">
+                                    <span class="uso-icon">🏪</span>
+                                    <span>Restaurantes, bares, lojas, lanchonetes, refeitórios</span>
+                                </div>
+                                <div class="uso-item">
+                                    <span class="uso-icon">🏨</span>
+                                    <span>Hotéis</span>
+                                </div>
+                                <div class="uso-item">
+                                    <span class="uso-icon">🎓</span>
+                                    <span>Escolas</span>
+                                </div>
+                                <div class="uso-item">
+                                    <span class="uso-icon">🏠</span>
+                                    <span>Diversos empreendimentos habitacionais</span>
+                                </div>
+                                <div class="uso-item">
+                                    <span class="uso-icon">👕</span>
+                                    <span>Vestiários</span>
+                                </div>
+                                <div class="uso-item">
+                                    <span class="uso-icon">🏥</span>
+                                    <span>Postos de Saúde</span>
+                                </div>
+                                <div class="uso-item">
+                                    <span class="uso-icon">👨‍🍳</span>
+                                    <span>Cozinhas</span>
+                                </div>
+                                <div class="uso-item">
+                                    <span class="uso-icon">🚿</span>
+                                    <span>Banheiros</span>
+                                </div>
+                                <div class="uso-item">
+                                    <span class="uso-icon">👮</span>
+                                    <span>Postos Policiais</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Containers -->
+                        <div class="usos-section">
+                            <h4>Containers são comumente utilizados:</h4>
+                            <div class="usos-grid">
+                                <div class="uso-item">
+                                    <span class="uso-icon">🏗️</span>
+                                    <span>Ambientes em canteiro de obras</span>
+                                </div>
+                                <div class="uso-item">
+                                    <span class="uso-icon">🏪</span>
+                                    <span>Quiosques</span>
+                                </div>
+                                <div class="uso-item">
+                                    <span class="uso-icon">📦</span>
+                                    <span>Depósitos</span>
+                                </div>
+                                <div class="uso-item">
+                                    <span class="uso-icon">🛍️</span>
+                                    <span>Lojas</span>
+                                </div>
+                            </div>
+                        </div>
+
                         <ul class="servico-features">
-                            <li>Equipe técnica especializada</li>
-                            <li>Montagem até 5x mais rápida</li>
                             <li>Baixo impacto ambiental</li>
-                            <li>Mínima interrupção das atividades</li>
-                        </ul>
-                        <a href="../index.html#contato" class="servico-btn">Solicitar Orçamento</a>
-                    </div>
-                </div>
-
-                <!-- Serviço 4 -->
-                <div class="servico-card">
-                    <div class="servico-imagem">
-                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1920&auto=format&fit=crop" alt="Lonas e Coberturas">
-                    </div>
-                    <div class="servico-conteudo">
-                        <h3>Lonas e Coberturas</h3>
-                        <p>Fornecemos lonas de alta qualidade, resistentes às intempéries e com tratamento anti-UV, ideais para coberturas de galpões e estruturas diversas.</p>
-                        <ul class="servico-features">
-                            <li>Lonas de PVC de alta resistência</li>
-                            <li>Tratamento anti-UV e antichamas</li>
-                            <li>Diversas cores disponíveis</li>
-                            <li>Durabilidade de até 10 anos</li>
-                        </ul>
-                        <a href="../index.html#contato" class="servico-btn">Solicitar Orçamento</a>
-                    </div>
-                </div>
-
-                <!-- Serviço 5 -->
-                <div class="servico-card">
-                    <div class="servico-imagem">
-                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=1920&auto=format&fit=crop" alt="Reformas e Ampliações">
-                    </div>
-                    <div class="servico-conteudo">
-                        <h3>Reformas e Ampliações</h3>
-                        <p>Realizamos reformas e ampliações em estruturas existentes, adaptando-as às novas necessidades do seu negócio com mínima interrupção das atividades.</p>
-                        <ul class="servico-features">
-                            <li>Avaliação técnica da estrutura atual</li>
-                            <li>Projeto de ampliação modular</li>
-                            <li>Reforço estrutural quando necessário</li>
-                            <li>Integração com construções existentes</li>
-                        </ul>
-                        <a href="../index.html#contato" class="servico-btn">Solicitar Orçamento</a>
-                    </div>
-                </div>
-
-                <!-- Serviço 6 -->
-                <div class="servico-card">
-                    <div class="servico-imagem">
-                        <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=1920&auto=format&fit=crop" alt="Manutenção Preventiva">
-                    </div>
-                    <div class="servico-conteudo">
-                        <h3>Manutenção Preventiva</h3>
-                        <p>Oferecemos serviços de manutenção preventiva e corretiva para garantir a durabilidade e segurança das estruturas e coberturas instaladas.</p>
-                        <ul class="servico-features">
-                            <li>Inspeções periódicas programadas</li>
-                            <li>Substituição de componentes desgastados</li>
-                            <li>Reforço estrutural quando necessário</li>
-                            <li>Contratos de manutenção personalizados</li>
+                            <li>Facilidade de mobilidade</li>
+                            <li>Custo mais acessível comparado à construções de alvenaria</li>
+                            <li>Opção versátil e moderna</li>
+                            <li>Vida útil longa</li>
+                            <li>Não precisa de fundação e terraplanagem na maior parte das vezes</li>
+                            <li>Pode ser montado e desmontado com facilidade</li>
                         </ul>
                         <a href="../index.html#contato" class="servico-btn">Solicitar Orçamento</a>
                     </div>
@@ -498,7 +816,7 @@
                 <p>Nossa equipe está pronta para desenvolver o projeto ideal para o seu negócio, com qualidade, eficiência e o melhor custo-benefício do mercado.</p>
                 <div class="cta-buttons">
                     <a href="../index.html#contato" class="cta-btn-primary">Solicitar Orçamento Agora</a>
-                    <a href="tel:+5500000000000" class="cta-btn-secondary">Falar com Especialista</a>
+                    <a href="tel:+5567999135877" class="cta-btn-secondary">Falar com Especialista</a>
                 </div>
                 <p class="cta-garantia">Resposta em até 24 horas! Atendemos em todo o Brasil.</p>
             </div>
@@ -506,7 +824,7 @@
     </section>
 
     <!-- Botão de WhatsApp flutuante -->
-    <a href="https://wa.me/5500000000000" class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/5567999135877" class="whatsapp-float" target="_blank">
         <i class="whatsapp-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="100%" height="100%" fill="currentColor">
                 <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
@@ -522,7 +840,7 @@
                     <!-- Coluna 1: Logo e descrição -->
                     <div class="footer-column">
                         <div class="footer-logo">
-                            <a href="../index.html">METALTECH</a>
+                            <a href="../index.html"><img src="../assets/Open.png" alt="OPEN" /></a>
                         </div>
                         <p>Soluções em estruturas metálicas e galpões lonados com qualidade e eficiência para atender às necessidades do seu negócio.</p>
                         <div class="social-icons">
@@ -557,6 +875,7 @@
                             <li><a href="../index.html#vantagens">Vantagens</a></li>
                             <li><a href="servicos.html">Serviços</a></li>
                             <li><a href="../index.html#segmentos">Segmentos</a></li>
+                            <li><a href="../index.html#sobre">Sobre</a></li>
                             <li><a href="../index.html#faq">Dúvidas Frequentes</a></li>
                             <li><a href="../index.html#contato">Orçamento</a></li>
                         </ul>
@@ -568,19 +887,12 @@
                         <ul class="contact-info">
                             <li>
                                 <span class="contact-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" width="16" height="16" fill="currentColor">
-                                        <path d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"/>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="16" height="16" fill="currentColor">
+                                        <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
                                     </svg>
                                 </span>
-                                <p>Rua Exemplo, 123<br>São Paulo - SP, 01234-567</p>
-                            </li>
-                            <li>
-                                <span class="contact-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="16" height="16" fill="currentColor">
-                                        <path d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"/>
-                                    </svg>
-                                </span>
-                                <p><a href="tel:+5500000000000">(00) 0000-0000</a></p>
+                                <p><strong>WhatsApp:</strong><br>
+                                <a href="https://wa.me/5567999135877" target="_blank">(67) 99913-5877</a></p>
                             </li>
                             <li>
                                 <span class="contact-icon">
@@ -588,7 +900,16 @@
                                         <path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"/>
                                     </svg>
                                 </span>
-                                <p><a href="mailto:contato@metaltech.com.br">contato@metaltech.com.br</a></p>
+                                <p><strong>E-mail:</strong><br>
+                                <a href="mailto:contato@opentransporteseservicos.com.br">contato@opentransporteseservicos.com.br</a></p>
+                            </li>
+                            <li>
+                                <span class="contact-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" width="16" height="16" fill="currentColor">
+                                        <path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/>
+                                    </svg>
+                                </span>
+                                <p><strong>Local:</strong> Campo Grande/MS</p>
                             </li>
                         </ul>
                     </div>
@@ -610,7 +931,7 @@
         <!-- Footer Bottom com direitos autorais -->
         <div class="footer-bottom">
             <div class="container">
-                <p>&copy; 2025 METALTECH. Todos os direitos reservados.</p>
+                <p>&copy; 2025 OPEN TRANSPORTES E SERVIÇOS. Todos os direitos reservados.</p>
                 <div class="footer-bottom-links">
                     <a href="#">Política de Privacidade</a>
                     <a href="#">Termos de Uso</a>
