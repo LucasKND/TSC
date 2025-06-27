@@ -15,107 +15,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../index.css">
     <style>
-        /* Animações de aparecimento */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes fadeInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        @keyframes fadeInRight {
-            from {
-                opacity: 0;
-                transform: translateX(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        @keyframes scaleIn {
-            from {
-                opacity: 0;
-                transform: scale(0.95);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-        
-        /* Classes de animação */
-        .animate-fade-in {
-            opacity: 0;
-            animation: fadeIn 0.8s ease forwards;
-        }
-        
-        .animate-fade-in-left {
-            opacity: 0;
-            animation: fadeInLeft 0.8s ease forwards;
-        }
-        
-        .animate-fade-in-right {
-            opacity: 0;
-            animation: fadeInRight 0.8s ease forwards;
-        }
-        
-        .animate-scale-in {
-            opacity: 0;
-            animation: scaleIn 0.8s ease forwards;
-        }
-        
-        /* Atrasos de animação */
-        .delay-100 {
-            animation-delay: 0.1s;
-        }
-        
-        .delay-200 {
-            animation-delay: 0.2s;
-        }
-        
-        .delay-300 {
-            animation-delay: 0.3s;
-        }
-        
-        .delay-400 {
-            animation-delay: 0.4s;
-        }
-        
-        .delay-500 {
-            animation-delay: 0.5s;
-        }
-        
-        /* Estilo adicional para controle de animações baseado em visualização */
-        .animate-fade-in:not(.animated),
-        .animate-fade-in-left:not(.animated),
-        .animate-fade-in-right:not(.animated),
-        .animate-scale-in:not(.animated) {
-            opacity: 0;
-            animation: none;
-        }
-        
-        .animated {
-            opacity: 1;
-            animation-play-state: running;
-        }
-        
         /* Estilos específicos para a página de serviços */
         .hero-servicos {
             position: relative;
@@ -702,7 +601,7 @@
 <body>
     <!-- Hero Section com Barra de Navegação -->
     <section class="hero-servicos">
-        <nav class="navbar animate-fade-in">
+        <nav class="navbar">
             <div class="logo">
                 <a href="../index.html"><img src="../assets/Open.png" alt="OPEN" /></a>
             </div>
@@ -725,8 +624,8 @@
         <!-- Cabeçalho da Página de Serviços -->
         <header class="header-servicos">
             <div class="container">
-                <h1 class="animate-fade-in">Nossos Serviços</h1>
-                <p class="animate-fade-in delay-200">Oferecemos soluções para demandas de Geração de Energia, Galpões e Módulos Habitacionais nos mais diversos segmentos. Prestando serviços com os mais altos padrões de qualidade, desde a contratação até a desmobilização da operação.</p>
+                <h1>Nossos Serviços</h1>
+                <p>Oferecemos soluções para demandas de Geração de Energia, Galpões e Módulos Habitacionais nos mais diversos segmentos. Prestando serviços com os mais altos padrões de qualidade, desde a contratação até a desmobilização da operação.</p>
             </div>
         </header>
     </section>
@@ -737,15 +636,15 @@
             <!-- Serviço 1 - Geradores a Diesel -->
             <div class="servico-item">
                 <div class="servico-content">
-                    <div class="servico-imagem animate-fade-in-left">
+                    <div class="servico-imagem">
                         <img src="../assets/geradoradiesel.png" alt="Gerador a Diesel">
                     </div>
                     <div class="servico-info">
-                        <h3 class="animate-fade-in delay-100">Locação e Venda de Geradores a Diesel</h3>
-                        <div class="servico-destaque animate-fade-in delay-200">
+                        <h3>Locação e Venda de Geradores a Diesel</h3>
+                        <div class="servico-destaque">
                             <p><strong>Representante autorizado MWM - vendas diretas da fábrica.</strong> Os Geradores a Diesel fabricados pela MWM são equipados com motores próprios.</p>
                         </div>
-                        <ul class="servico-features animate-fade-in delay-300">
+                        <ul class="servico-features">
                             <li>Equipamentos disponíveis nas versões ABERTA e CARENADA</li>
                             <li>Sistemas de controle microprocessados de última geração</li>
                             <li>Alternadores de alto rendimento e fácil manutenção</li>
@@ -754,7 +653,7 @@
                             <li>Dimensões reduzidas para transporte e armazenamento</li>
                             <li>Atendimento às normativas ambientais de segurança e sustentabilidade</li>
                         </ul>
-                        <a href="../index.html#contato" class="servico-btn animate-scale-in delay-400">Solicitar Orçamento</a>
+                        <a href="../index.html#contato" class="servico-btn">Solicitar Orçamento</a>
                     </div>
                 </div>
             </div>
@@ -762,13 +661,13 @@
             <!-- Serviço 2 - Geradores a Gás -->
             <div class="servico-item">
                 <div class="servico-content">
-                    <div class="servico-imagem animate-fade-in-left">
+                    <div class="servico-imagem">
                         <img src="../assets/geradoragas.png" alt="Gerador a Gás">
                     </div>
                     <div class="servico-info">
-                        <h3 class="animate-fade-in delay-100">Locação e Venda de Geradores a Gás</h3>
-                        <p class="animate-fade-in delay-200">Esses motores foram projetados exclusivamente para trabalho com gás e possuem a maior densidade de potência por cilindro do mercado, utilizando vários tipos de gases como combustível (gás natural e biogás).</p>
-                        <ul class="servico-features animate-fade-in delay-300">
+                        <h3>Locação e Venda de Geradores a Gás</h3>
+                        <p>Esses motores foram projetados exclusivamente para trabalho com gás e possuem a maior densidade de potência por cilindro do mercado, utilizando vários tipos de gases como combustível (gás natural e biogás).</p>
+                        <ul class="servico-features">
                             <li>Equipamentos disponíveis nas versões ABERTA e CARENADA</li>
                             <li>Sistemas de controle e proteção do gás de última geração</li>
                             <li>Menor tempo de reação à carga do mercado</li>
@@ -777,7 +676,7 @@
                             <li>Menor nível de emissões de poluentes, garantindo sustentabilidade ambiental</li>
                             <li>Menor consumo de combustível</li>
                         </ul>
-                        <a href="../index.html#contato" class="servico-btn animate-scale-in delay-400">Solicitar Orçamento</a>
+                        <a href="../index.html#contato" class="servico-btn">Solicitar Orçamento</a>
                     </div>
                 </div>
             </div>
@@ -785,12 +684,12 @@
             <!-- Serviço 3 - Galpões -->
             <div class="servico-item">
                 <div class="servico-content">
-                    <div class="servico-imagem animate-fade-in-left">
+                    <div class="servico-imagem">
                         <img src="../assets/galpao.jpg" alt="Galpões">
                     </div>
                     <div class="servico-info">
-                        <h3 class="animate-fade-in delay-100">Locação e Venda de Galpões</h3>
-                        <div class="servico-opcoes animate-fade-in delay-200">
+                        <h3>Locação e Venda de Galpões</h3>
+                        <div class="servico-opcoes">
                             <div class="opcao-item">
                                 <h4>VENDA</h4>
                                 <p>Fabricamos Galpões sob medida com estrutura em aço galvanizado a fogo, treliçado ou tubular, cobertura e fechamento em lona vinílica de alta tenacidade.</p>
@@ -800,13 +699,13 @@
                                 <p>Para Locação dispomos de galpões modulares com frente de 10m a 40m podendo se estender à necessidade dos clientes com os módulos de 5m.</p>
                             </div>
                         </div>
-                        <h4 style="color: #FF6B35; font-size: 1.1rem; margin-bottom: 15px;" class="animate-fade-in delay-300">OPCIONAIS NA LOCAÇÃO</h4>
-                        <ul class="opcionais-lista animate-fade-in delay-300">
+                        <h4 style="color: #FF6B35; font-size: 1.1rem; margin-bottom: 15px;">OPCIONAIS NA LOCAÇÃO</h4>
+                        <ul class="opcionais-lista">
                             <li><span>⚡</span> Energia elétrica (iluminação e tomada)</li>
                             <li><span>❄️</span> Climatização</li>
                             <li><span>🏢</span> Piso</li>
                         </ul>
-                        <a href="../index.html#contato" class="servico-btn animate-scale-in delay-400">Solicitar Orçamento</a>
+                        <a href="../index.html#contato" class="servico-btn">Solicitar Orçamento</a>
                     </div>
                 </div>
             </div>
@@ -814,7 +713,7 @@
             <!-- Serviço 4 - Módulos Habitacionais e Containers -->
             <div class="servico-item">
                 <div class="servico-content">
-                    <div class="servico-imagens-duplas animate-fade-in-left">
+                    <div class="servico-imagens-duplas">
                         <div class="servico-imagem">
                             <img src="../assets/modulohabitacional.png" alt="Módulos Habitacionais">
                             <div class="imagem-label">Módulos Habitacionais</div>
@@ -825,11 +724,11 @@
                         </div>
                     </div>
                     <div class="servico-info">
-                        <h3 class="animate-fade-in delay-100">Locação e Venda de Módulos Habitacionais e Containers</h3>
-                        <p class="animate-fade-in delay-200">O baixo impacto ambiental, a facilidade de mobilidade e o custo mais acessível quando comparado à construções de alvenaria fazem do container uma opção versátil e moderna.</p>
+                        <h3>Locação e Venda de Módulos Habitacionais e Containers</h3>
+                        <p>O baixo impacto ambiental, a facilidade de mobilidade e o custo mais acessível quando comparado à construções de alvenaria fazem do container uma opção versátil e moderna.</p>
                         
                         <!-- Módulos Habitacionais -->
-                        <div class="usos-section animate-fade-in delay-300">
+                        <div class="usos-section">
                             <h4>Módulos Habitacionais são comumente utilizados:</h4>
                             <div class="usos-grid">
                                 <div class="uso-item">
@@ -872,7 +771,7 @@
                         </div>
 
                         <!-- Containers -->
-                        <div class="usos-section animate-fade-in delay-400">
+                        <div class="usos-section">
                             <h4>Containers são comumente utilizados:</h4>
                             <div class="usos-grid">
                                 <div class="uso-item">
@@ -894,7 +793,7 @@
                             </div>
                         </div>
 
-                        <ul class="servico-features animate-fade-in delay-500">
+                        <ul class="servico-features">
                             <li>Baixo impacto ambiental</li>
                             <li>Facilidade de mobilidade</li>
                             <li>Custo mais acessível comparado à construções de alvenaria</li>
@@ -903,7 +802,7 @@
                             <li>Não precisa de fundação e terraplanagem na maior parte das vezes</li>
                             <li>Pode ser montado e desmontado com facilidade</li>
                         </ul>
-                        <a href="../index.html#contato" class="servico-btn animate-scale-in delay-500">Solicitar Orçamento</a>
+                        <a href="../index.html#contato" class="servico-btn">Solicitar Orçamento</a>
                     </div>
                 </div>
             </div>
@@ -972,14 +871,14 @@
         <div class="cta-overlay"></div>
         <div class="cta-container">
             <div class="cta-content">
-                <h2 class="animate-fade-in">Precisa de uma solução personalizada?</h2>
-                <h3 class="animate-fade-in delay-100">Entre em contato conosco hoje mesmo</h3>
-                <p class="animate-fade-in delay-200">Nossa equipe está pronta para desenvolver o projeto ideal para o seu negócio, com qualidade, eficiência e o melhor custo-benefício do mercado.</p>
-                <div class="cta-buttons animate-fade-in delay-300">
+                <h2>Precisa de uma solução personalizada?</h2>
+                <h3>Entre em contato conosco hoje mesmo</h3>
+                <p>Nossa equipe está pronta para desenvolver o projeto ideal para o seu negócio, com qualidade, eficiência e o melhor custo-benefício do mercado.</p>
+                <div class="cta-buttons">
                     <a href="../index.html#contato" class="cta-btn-primary">Solicitar Orçamento Agora</a>
                     <a href="tel:+5567999135877" class="cta-btn-secondary">Falar com Especialista</a>
                 </div>
-                <p class="cta-garantia animate-fade-in delay-400">Resposta em até 24 horas! Atendemos em todo o Brasil.</p>
+                <p class="cta-garantia">Resposta em até 24 horas! Atendemos em todo o Brasil.</p>
             </div>
         </div>
     </section>
@@ -1098,38 +997,5 @@
 
     <!-- Importando o JavaScript -->
     <script src="../index.js"></script>
-    
-    <!-- Script para animações -->
-    <script>
-        // Função para verificar se um elemento está visível na viewport
-        function isElementInViewport(el) {
-            const rect = el.getBoundingClientRect();
-            return (
-                rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
-                rect.bottom >= 0
-            );
-        }
-        
-        // Função para animar elementos quando estão visíveis
-        function handleScrollAnimations() {
-            const animatedElements = document.querySelectorAll('.animate-fade-in, .animate-fade-in-left, .animate-fade-in-right, .animate-scale-in');
-            
-            animatedElements.forEach(element => {
-                if (isElementInViewport(element) && !element.classList.contains('animated')) {
-                    element.classList.add('animated');
-                }
-            });
-        }
-        
-        // Adicionar event listeners
-        window.addEventListener('scroll', handleScrollAnimations);
-        window.addEventListener('resize', handleScrollAnimations);
-        window.addEventListener('load', handleScrollAnimations);
-        
-        // Inicialização
-        document.addEventListener('DOMContentLoaded', function() {
-            handleScrollAnimations();
-        });
-    </script>
 </body>
 </html>
