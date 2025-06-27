@@ -449,7 +449,7 @@ h1, h2, h3, h4, h5, h6 {
 .cta-section {
     position: relative;
     padding: 100px 0;
-    background: url('https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1920&auto=format&fit=crop') no-repeat center center;
+    background: url('assets/galpao.jpg') no-repeat center center;
     background-size: cover;
     background-attachment: fixed;
     color: #fff;
