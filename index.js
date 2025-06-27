@@ -2,22 +2,40 @@
 const menuBtn = document.querySelector('.menu-btn');
 const navLinks = document.querySelector('.nav-links');
 
-// Toggle do menu mobile
-menuBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    menuBtn.classList.toggle('active');
-    // Impedir rolagem do body quando o menu está aberto
-    document.body.classList.toggle('menu-open');
-});
-
-// Fechar menu ao clicar em um link
-document.querySelectorAll('.nav-links li a').forEach(link => {
-    link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        menuBtn.classList.remove('active');
-        document.body.classList.remove('menu-open');
+// Verificar se os elementos existem antes de adicionar event listeners
+if (menuBtn && navLinks) {
+    console.log('Menu hambúrguer inicializado');
+    
+    // Toggle do menu mobile
+    menuBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        console.log('Menu clicado!');
+        navLinks.classList.toggle('active');
+        menuBtn.classList.toggle('active');
+        // Impedir rolagem do body quando o menu está aberto
+        document.body.classList.toggle('menu-open');
     });
-});
+
+    // Fechar menu ao clicar em um link
+    document.querySelectorAll('.nav-links li a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            menuBtn.classList.remove('active');
+            document.body.classList.remove('menu-open');
+        });
+    });
+
+    // Fechar menu ao clicar fora dele
+    document.addEventListener('click', (e) => {
+        if (!navLinks.contains(e.target) && !menuBtn.contains(e.target)) {
+            navLinks.classList.remove('active');
+            menuBtn.classList.remove('active');
+            document.body.classList.remove('menu-open');
+        }
+    });
+}
 
 // Scroll suave para links de navegação internos com ajuste para barra de navegação fixa
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
