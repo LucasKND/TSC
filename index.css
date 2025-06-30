@@ -1045,6 +1045,9 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--light-gray);
     transition: var(--transition);
     text-decoration: none;
+    word-break: break-all;
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 
 .contact-email a:hover {
@@ -1104,6 +1107,12 @@ h1, h2, h3, h4, h5, h6 {
     .whatsapp-info p,
     .contact-email p {
         font-size: 0.9rem;
+    }
+    
+    .contact-email a {
+        word-break: break-all;
+        overflow-wrap: break-word;
+        font-size: 0.85rem;
     }
     
     .contact-info li,
