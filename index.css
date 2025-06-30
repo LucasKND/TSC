@@ -1024,6 +1024,75 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--primary);
 }
 
+/* Estilos para informações de contato e endereços organizados */
+.contact-email p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+.contact-email p:last-child {
+    margin-bottom: 0;
+}
+
+.contact-email p strong {
+    color: var(--primary);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.contact-email a {
+    color: var(--light-gray);
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.contact-email a:hover {
+    color: var(--primary);
+}
+
+.addresses-info li {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    align-items: flex-start;
+}
+
+.addresses-info li:last-child {
+    margin-bottom: 0;
+}
+
+/* Footer Bottom - Estilos para área de direitos autorais */
+.footer-bottom {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 25px 0;
+    text-align: center;
+}
+
+.footer-bottom .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-bottom p {
+    color: var(--light-gray);
+    font-size: 0.9rem;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Garantir que o grid do footer tenha 4 colunas balanceadas em desktop */
+@media (min-width: 769px) {
+    .footer-grid {
+        grid-template-columns: 1.2fr 1fr 1.3fr 1.3fr;
+        gap: 40px;
+    }
+}
+
 /* Responsividade específica para o footer atualizado */
 @media (max-width: 768px) {
     .footer-grid {
@@ -1032,11 +1101,13 @@ h1, h2, h3, h4, h5, h6 {
     }
     
     .address-info p,
-    .whatsapp-info p {
+    .whatsapp-info p,
+    .contact-email p {
         font-size: 0.9rem;
     }
     
-    .contact-info li {
+    .contact-info li,
+    .addresses-info li {
         flex-direction: column;
         gap: 10px;
         text-align: left;
@@ -1044,6 +1115,11 @@ h1, h2, h3, h4, h5, h6 {
     
     .contact-icon {
         align-self: flex-start;
+    }
+    
+    .footer-bottom .container {
+        flex-direction: column;
+        text-align: center;
     }
 }
 
@@ -1513,10 +1589,11 @@ body.menu-open {
     
     .footer-bottom .container {
         flex-direction: column;
+        text-align: center;
     }
     
-    .footer-bottom-links {
-        margin-top: 10px;
+    .footer-bottom p {
+        font-size: 0.85rem;
     }
 }
 
