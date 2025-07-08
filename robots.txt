@@ -1,0 +1,29 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://opentransporteseservicos.com.br/sitemap.xml
+
+# Crawl-delay for non-critical bots
+User-agent: *
+Crawl-delay: 1
+
+# Allow access to CSS and JS files
+Allow: /index.css
+Allow: /index.js
+Allow: /assets/
+
+# Block any unnecessary files
+Disallow: /*.log$
+Disallow: /tmp/
+Disallow: /.git/
+
+# Popular search engines - no restrictions
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /

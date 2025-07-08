@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Página Principal -->
+  <url>
+    <loc>https://opentransporteseservicos.com.br/</loc>
+    <lastmod>2025-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://opentransporteseservicos.com.br/assets/estrutura.jpg</image:loc>
+      <image:title>Galpão lonado com estrutura metálica - OPEN Transportes</image:title>
+      <image:caption>Estruturas metálicas e galpões lonados para locação e venda</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://opentransporteseservicos.com.br/assets/geradoradiesel.png</image:loc>
+      <image:title>Gerador a Diesel MWM</image:title>
+      <image:caption>Locação e venda de geradores a diesel representante autorizado MWM</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://opentransporteseservicos.com.br/assets/geradoragas.png</image:loc>
+      <image:title>Gerador a Gás Natural</image:title>
+      <image:caption>Geradores a gás natural e biogás para locação</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Página de Serviços -->
+  <url>
+    <loc>https://opentransporteseservicos.com.br/pages/servicos.html</loc>
+    <lastmod>2025-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://opentransporteseservicos.com.br/assets/geradoradiesel.png</image:loc>
+      <image:title>Geradores a Diesel MWM para locação</image:title>
+      <image:caption>Representante autorizado MWM - locação e venda</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://opentransporteseservicos.com.br/assets/geradoragas.png</image:loc>
+      <image:title>Geradores a Gás para locação</image:title>
+      <image:caption>Motores exclusivos para gás natural e biogás</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://opentransporteseservicos.com.br/assets/galpao.jpg</image:loc>
+      <image:title>Galpões Modulares</image:title>
+      <image:caption>Galpões lonados modulares para locação e venda</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://opentransporteseservicos.com.br/assets/modulohabitacional.png</image:loc>
+      <image:title>Módulos Habitacionais</image:title>
+      <image:caption>Módulos habitacionais para diversos usos</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://opentransporteseservicos.com.br/assets/container.png</image:loc>
+      <image:title>Containers para locação</image:title>
+      <image:caption>Containers versáteis para escritórios e depósitos</image:caption>
+    </image:image>
+  </url>
+  
+</urlset>
