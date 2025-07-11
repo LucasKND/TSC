@@ -1781,19 +1781,31 @@ body.menu-open {
     transform: scale(1.02);
 }
 
-@media (max-width: 768px) {
-    .parceiros {
-        padding: 60px 0;
-    }
-    
-    .parceiros h2 {
-        font-size: 2rem;
-        margin-bottom: 30px;
-    }
-    
-    .parceiros-imagem {
-        margin-top: 30px;
-    }
+/* Estilos para cards clicáveis */
+.segmento-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: var(--transition);
+}
+
+.segmento-card-link:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+.segmento-card-link .segmento-card {
+    cursor: pointer;
+}
+
+.segmento-card-link .segmento-card:hover {
+    box-shadow: 0 15px 40px rgba(255, 107, 53, 0.15);
+    transform: translateY(-8px);
+    border-color: var(--primary);
+}
+
+.segmento-card-link .segmento-card:hover h4 {
+    color: var(--primary);
 }
 
 /* Footer */
