@@ -2,7 +2,7 @@
 
 > Soluções robustas e inteligentes para armazenamento, logística e construção.
 
-Este é o site institucional da **OPEN TSC**, uma plataforma desenvolvida para apresentar o catálogo de serviços de uma empresa especializada em containers e grandes estruturas metálicas.
+Este é o site institucional da **OPEN TSC**, desenvolvido para apresentar o catálogo de serviços de uma empresa especializada em containers e grandes estruturas metálicas.
 
 ---
 
