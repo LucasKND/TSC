@@ -32,6 +32,6 @@ O site serve como a principal vitrine digital da TSC, destacando 3 pilares funda
 ---
 
 ## 🔗 Link do Projeto
-https://lucasknd.github.io/TSC/
+(https://lucasknd.github.io/Site-Institucional-Open-Transportes-e-Servicos/)
 
 ---
